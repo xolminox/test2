@@ -11,7 +11,10 @@ class _BScreenState extends State<BScreen> {
   @override
   Widget build(BuildContext context) {
     return const Column(
-      children: [Text('this sis'), Text(' ddd')],
+      children: [
+        Text('this sis'),
+        Text(' ddd'),
+      ],
     );
   }
 }
