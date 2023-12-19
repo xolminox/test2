@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:jr_world/component/main_calendar.dart';
 
 class AScreen extends StatefulWidget {
   const AScreen({Key? key}) : super(key: key);
@@ -10,8 +11,6 @@ class AScreen extends StatefulWidget {
 class _AScreenState extends State<AScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text('AAAAA')],
-    );
+    return const MainCalendar();
   }
 }

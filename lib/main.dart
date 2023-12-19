@@ -33,14 +33,12 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
-  static TextStyle optionStyle =
-      const TextStyle(fontSize: 40, fontWeight: FontWeight.bold);
 
-  List<Widget> body_items = [
-    AScreen(),
-    BScreen(),
-    CScreen(),
-    DScreen(),
+  List<Widget> bodyItems = [
+    const AScreen(),
+    const BScreen(),
+    const CScreen(),
+    const DScreen(),
   ];
 
   @override
@@ -50,7 +48,7 @@ class _MyHomePageState extends State<MyHomePage> {
         title: const Text('Home'),
       ),
       body: Center(
-        child: body_items.elementAt(_selectedIndex),
+        child: bodyItems.elementAt(_selectedIndex),
       ),
       bottomNavigationBar: BottomNavigationBar(
         elevation: 2,
@@ -60,13 +58,17 @@ class _MyHomePageState extends State<MyHomePage> {
             _selectedIndex = index;
           });
         },
-        backgroundColor: Colors.teal,
-        selectedItemColor: Colors.black,
-        unselectedItemColor: Colors.white,
+        backgroundColor: Color(0xFF920909),
+        selectedItemColor: Colors.white,
+        unselectedItemColor: Colors.white38,
         showUnselectedLabels: true,
         type: BottomNavigationBarType.fixed,
         items: const [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: 'a'),
+          BottomNavigationBarItem(
+              icon: Icon(
+                Icons.calendar_today,
+              ),
+              label: 'Calendar'),
           BottomNavigationBarItem(icon: Icon(Icons.star), label: 'b'),
           BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'c'),
           BottomNavigationBarItem(icon: Icon(Icons.send), label: 'd'),
