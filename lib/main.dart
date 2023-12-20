@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:jr_world/screen/ascreen.dart';
 import 'package:jr_world/screen/bscreen.dart';
 import 'package:jr_world/screen/cscreen.dart';
 import 'package:jr_world/screen/dscreen.dart';
+import 'package:jr_world/screen/home_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -35,7 +35,7 @@ class _MyHomePageState extends State<MyHomePage> {
   int _selectedIndex = 0;
 
   List<Widget> bodyItems = [
-    const AScreen(),
+    const HomeScreen(),
     const BScreen(),
     const CScreen(),
     const DScreen(),
@@ -44,9 +44,6 @@ class _MyHomePageState extends State<MyHomePage> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text('Home'),
-      ),
       body: Center(
         child: bodyItems.elementAt(_selectedIndex),
       ),

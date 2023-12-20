@@ -10,11 +10,16 @@ class BScreen extends StatefulWidget {
 class _BScreenState extends State<BScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        Text('this sis'),
-        Text(' ddd'),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('B screen'),
+      ),
+      body: const Column(
+        children: [
+          Text('this sis'),
+          Text(' BBBBBBBBBBBBBBBBBBBB'),
+        ],
+      ),
     );
   }
 }

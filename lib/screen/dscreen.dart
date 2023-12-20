@@ -10,8 +10,16 @@ class DScreen extends StatefulWidget {
 class _DScreenState extends State<DScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text('DDDDDDDDDDDDDD')],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('D screen'),
+      ),
+      body: const Column(
+        children: [
+          Text('this sis'),
+          Text(' DDDDDDDDDDDD'),
+        ],
+      ),
     );
   }
 }

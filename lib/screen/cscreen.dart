@@ -10,8 +10,16 @@ class CScreen extends StatefulWidget {
 class _CScreenState extends State<CScreen> {
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [Text('CCCCCCCCCCCCCCCCC')],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('C screen'),
+      ),
+      body: const Column(
+        children: [
+          Text('this sis'),
+          Text(' CCCCCCCCCCCCC'),
+        ],
+      ),
     );
   }
 }
