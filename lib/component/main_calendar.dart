@@ -34,7 +34,7 @@ class MainCalendar extends StatelessWidget {
         isTodayHighlighted: true,
         todayDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
-          color: Colors.teal.withOpacity(0.4),
+          color: Colors.teal.withOpacity(0.5),
         ),
         defaultDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
@@ -46,7 +46,8 @@ class MainCalendar extends StatelessWidget {
         ),
         selectedDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
-          border: Border.all(color: PRIMARY_COLOR, width: 1.0),
+          border: Border.all(color: Colors.blue, width: 3.0),
+          color: Colors.transparent,
         ),
         todayTextStyle:
             TextStyle(fontWeight: FontWeight.w600, color: DARK_GREY_COLOR),
@@ -55,7 +56,7 @@ class MainCalendar extends StatelessWidget {
         weekendTextStyle:
             const TextStyle(fontWeight: FontWeight.w600, color: Colors.red),
         selectedTextStyle:
-            const TextStyle(fontWeight: FontWeight.w600, color: PRIMARY_COLOR),
+            TextStyle(fontWeight: FontWeight.w600, color: DARK_GREY_COLOR),
       ),
     );
   }
