@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:jr_world/component/main_calendar.dart';
+import 'package:jr_world/component/schedule_bottom_sheet.dart';
 import 'package:jr_world/component/schedule_card.dart';
 import 'package:jr_world/component/today_banner.dart';
+import 'package:jr_world/const/colors.dart';
 
 class HomeScreen extends StatefulWidget {
   const HomeScreen({Key? key}) : super(key: key);
@@ -20,6 +22,16 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        backgroundColor: PRIMARY_COLOR,
+        onPressed: () {
+          showModalBottomSheet(
+              isDismissible: true,
+              context: context,
+              builder: (_) => const ScheduleBotoomSheet());
+        },
+        child: Icon(Icons.add),
+      ),
       appBar: AppBar(
         title: const Text('Calendar'),
       ),
