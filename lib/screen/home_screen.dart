@@ -26,11 +26,13 @@ class _HomeScreenState extends State<HomeScreen> {
         backgroundColor: PRIMARY_COLOR,
         onPressed: () {
           showModalBottomSheet(
+              isScrollControlled:
+                  true, // 이걸 설정하지 않으면 bottomsheet가 50% 이상 올라오지 않음
               isDismissible: true,
               context: context,
               builder: (_) => const ScheduleBotoomSheet());
         },
-        child: Icon(Icons.add),
+        child: const Icon(Icons.add),
       ),
       appBar: AppBar(
         title: const Text('Calendar'),
