@@ -13,6 +13,7 @@ class MainCalendar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TableCalendar(
+      locale: 'ko_kr',
       focusedDay: DateTime.now(),
       firstDay: DateTime(1950, 1, 1),
       lastDay: DateTime(2500, 12, 31),
@@ -29,8 +30,17 @@ class MainCalendar extends StatelessWidget {
         formatButtonVisible: false,
         titleTextStyle: TextStyle(fontWeight: FontWeight.w700, fontSize: 18),
       ),
+      // <<days of Week Style>>
+      daysOfWeekHeight: 25,
+      daysOfWeekStyle: DaysOfWeekStyle(
+        weekdayStyle:
+            TextStyle(fontWeight: FontWeight.w400, color: dark_grey_color),
+        weekendStyle:
+            const TextStyle(fontWeight: FontWeight.w400, color: Colors.red),
+      ),
       // <<Calendar Style>>
       calendarStyle: CalendarStyle(
+        cellPadding: EdgeInsets.only(top: 5),
         isTodayHighlighted: true,
         todayDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
@@ -38,11 +48,11 @@ class MainCalendar extends StatelessWidget {
         ),
         defaultDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
-          color: LIGHT_GREY_COLOR,
+          color: light_grey_color,
         ),
         weekendDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
-          color: LIGHT_GREY_COLOR,
+          color: light_grey_color,
         ),
         selectedDecoration: BoxDecoration(
           borderRadius: BorderRadius.circular(6.0),
@@ -50,13 +60,13 @@ class MainCalendar extends StatelessWidget {
           color: Colors.transparent,
         ),
         todayTextStyle:
-            TextStyle(fontWeight: FontWeight.w600, color: DARK_GREY_COLOR),
+            TextStyle(fontWeight: FontWeight.w600, color: dark_grey_color),
         defaultTextStyle:
-            TextStyle(fontWeight: FontWeight.w600, color: DARK_GREY_COLOR),
+            TextStyle(fontWeight: FontWeight.w600, color: dark_grey_color),
         weekendTextStyle:
             const TextStyle(fontWeight: FontWeight.w600, color: Colors.red),
         selectedTextStyle:
-            TextStyle(fontWeight: FontWeight.w600, color: DARK_GREY_COLOR),
+            TextStyle(fontWeight: FontWeight.w600, color: dark_grey_color),
       ),
     );
   }

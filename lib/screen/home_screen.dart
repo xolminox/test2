@@ -22,33 +22,43 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        backgroundColor: PRIMARY_COLOR,
-        onPressed: () {
-          showModalBottomSheet(
-              isScrollControlled:
-                  true, // 이걸 설정하지 않으면 bottomsheet가 50% 이상 올라오지 않음
-              isDismissible: true,
-              context: context,
-              builder: (_) => const ScheduleBotoomSheet());
-        },
-        child: const Icon(Icons.add),
-      ),
+      floatingActionButton: _floatingActionButton(),
       appBar: AppBar(
         title: const Text('Calendar'),
       ),
       body: SafeArea(
-        child: Column(
-          children: [
-            MainCalendar(
-              selectedDate: selectedDate,
-              onDaySelected: onDaySelected,
-            ),
-            TodayBanner(selectedDate: selectedDate, count: 3),
-            const SizedBox(height: 8),
-            const ScheduleCard(startTime: 12, endTime: 14, content: '프로그래밍 공부')
-          ],
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Column(
+            children: [
+              MainCalendar(
+                selectedDate: selectedDate,
+                onDaySelected: onDaySelected,
+              ),
+              TodayBanner(selectedDate: selectedDate, count: 3),
+              const SizedBox(height: 8),
+              const ScheduleCard(
+                  startTime: 12, endTime: 14, content: '프로그래밍 공부')
+            ],
+          ),
         ),
+      ),
+    );
+  }
+
+  Widget _floatingActionButton() {
+    return FloatingActionButton(
+      backgroundColor: primary_color,
+      onPressed: () {
+        showModalBottomSheet(
+            isScrollControlled: true, // 이걸 설정하지 않으면 bottomsheet가 50% 이상 올라오지 않음
+            isDismissible: true,
+            context: context,
+            builder: (_) => const ScheduleBottomSheet());
+      },
+      child: const Icon(
+        Icons.add,
+        color: on_primary_color,
       ),
     );
   }

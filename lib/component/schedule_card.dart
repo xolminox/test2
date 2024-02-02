@@ -17,7 +17,7 @@ class ScheduleCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(width: 1.0, color: PRIMARY_COLOR),
+          border: Border.all(width: 1.0, color: primary_color),
           borderRadius: BorderRadius.circular(8.0)),
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -47,7 +47,7 @@ class _Time extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     const textStyle = TextStyle(
-        fontWeight: FontWeight.w600, color: PRIMARY_COLOR, fontSize: 16);
+        fontWeight: FontWeight.w600, color: primary_color, fontSize: 16);
 
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,

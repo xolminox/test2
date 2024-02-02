@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import 'package:intl/date_symbol_data_local.dart';
+import 'package:jr_world/const/colors.dart';
 import 'package:jr_world/screen/bscreen.dart';
 import 'package:jr_world/screen/cscreen.dart';
 import 'package:jr_world/screen/dscreen.dart';
 import 'package:jr_world/screen/home_screen.dart';
 
-void main() {
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await initializeDateFormatting();
   runApp(const MyApp());
 }
 
@@ -55,7 +59,7 @@ class _MyHomePageState extends State<MyHomePage> {
             _selectedIndex = index;
           });
         },
-        backgroundColor: Color(0xFF920909),
+        backgroundColor: secondary_color,
         selectedItemColor: Colors.white,
         unselectedItemColor: Colors.white38,
         showUnselectedLabels: true,

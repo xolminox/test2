@@ -10,13 +10,13 @@ class TodayBanner extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final textStyle =
-        TextStyle(fontWeight: FontWeight.w600, color: Colors.white);
+    const textStyle =
+        TextStyle(fontWeight: FontWeight.w600, color: on_primary_color);
 
     return Container(
-      color: PRIMARY_COLOR,
+      color: primary_color,
       child: Padding(
-        padding: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
+        padding: const EdgeInsets.symmetric(vertical: 8, horizontal: 16),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [

@@ -17,7 +17,7 @@ class CustomTextField extends StatelessWidget {
         Text(
           label,
           style: const TextStyle(
-            color: PRIMARY_COLOR,
+            color: primary_color,
             fontWeight: FontWeight.w600,
           ),
         ),

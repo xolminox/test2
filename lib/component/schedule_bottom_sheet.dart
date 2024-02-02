@@ -2,19 +2,21 @@ import 'package:flutter/material.dart';
 import 'package:jr_world/component/custom_text_field.dart';
 import 'package:jr_world/const/colors.dart';
 
-class ScheduleBotoomSheet extends StatefulWidget {
-  const ScheduleBotoomSheet({Key? key}) : super(key: key);
+class ScheduleBottomSheet extends StatefulWidget {
+  const ScheduleBottomSheet({Key? key}) : super(key: key);
 
   @override
-  State<ScheduleBotoomSheet> createState() => _ScheduleBotoomSheetState();
+  State<ScheduleBottomSheet> createState() => _ScheduleBottomSheetState();
 }
 
-class _ScheduleBotoomSheetState extends State<ScheduleBotoomSheet> {
+class _ScheduleBottomSheetState extends State<ScheduleBottomSheet> {
   @override
   Widget build(BuildContext context) {
-    final bottomInset = MediaQuery.of(context).viewInsets.bottom;
+    final bottomInset =
+        MediaQuery.of(context).viewInsets.bottom; // 하단 키보드 올라오는 만큼 높이 설정
     return Container(
-        height: MediaQuery.of(context).size.height / 2 + bottomInset,
+        height: MediaQuery.of(context).size.height / 2 +
+            bottomInset, // 키보드 유무에 따라 높이가 변함
         color: Colors.white,
         child: Padding(
           padding:
@@ -54,9 +56,13 @@ class _ScheduleBotoomSheetState extends State<ScheduleBotoomSheet> {
                 child: ElevatedButton(
                   onPressed: onSavePressed,
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: PRIMARY_COLOR,
+                    backgroundColor: primary_color,
                   ),
-                  child: const Text('저장'),
+                  child: const Text(
+                    '저장',
+                    style: TextStyle(
+                        color: on_primary_color, fontWeight: FontWeight.bold),
+                  ),
                 ),
               )
             ],
