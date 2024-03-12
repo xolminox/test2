@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:intl/date_symbol_data_local.dart';
 import 'package:jr_world/const/colors.dart';
 import 'package:jr_world/screen/bscreen.dart';
@@ -9,7 +10,7 @@ import 'package:jr_world/screen/home_screen.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   await initializeDateFormatting();
-  runApp(const MyApp());
+  runApp(const ProviderScope(child: MyApp()));
 }
 
 class MyApp extends StatelessWidget {
@@ -40,7 +41,7 @@ class _MyHomePageState extends State<MyHomePage> {
 
   List<Widget> bodyItems = [
     const HomeScreen(),
-    const BScreen(),
+    BScreen(),
     const CScreen(),
     const DScreen(),
   ];
